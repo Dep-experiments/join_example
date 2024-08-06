@@ -1,5 +1,17 @@
 CREATE TABLE exam(
     exam_code VARCHAR(10) PRIMARY KEY ,
     passing_score INT NOT NULL ,
+    module_id VARCHAR(10) NOT NULL ,
     CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module(id)
 );
+
+INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
+                                                   ("E002", "78", "M005"),
+                                                   ("E003", "45", "M005"),
+                                                   ("E004", "96", "M007"),
+                                                   ("E005", "12", "M002"),
+                                                   ("E006", "35", "M007"),
+                                                   ("E007", "81", "M008"),
+                                                   ("E008", "53", "M001"),
+                                                   ("E009", "73", M006),
+                                                   ("E010", "66", "M005");
