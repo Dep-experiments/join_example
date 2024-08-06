@@ -17,6 +17,12 @@ VALUES ('S001', 'Amal'),
        ('S010', 'Sanduni');
 
 
+CREATE TABLE batch(
+  number VARCHAR(10) PRIMARY KEY ,
+  programme_id VARCHAR(10) NOT NULL ,
+  CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme(id)
+);
+
 CREATE TABLE module
 (
     id      VARCHAR(10) PRIMARY KEY,
@@ -50,3 +56,14 @@ INSERT INTO module (id, name, credits) VALUES
                                            ('M008', 'Artificial Intelligence', 4),
                                            ('M009', 'Machine Learning', 4),
                                            ('M010', 'Human-Computer Interaction', 3);
+
+INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
+                                                              ("E002", "78", "M005"),
+                                                              ("E003", "45", "M005"),
+                                                              ("E004", "96", "M007"),
+                                                              ("E005", "12", "M002"),
+                                                              ("E006", "35", "M007"),
+                                                              ("E007", "81", "M008"),
+                                                              ("E008", "53", "M001"),
+                                                              ("E009", "73", M006),
+                                                              ("E010", "66", "M005");
