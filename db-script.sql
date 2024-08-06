@@ -98,3 +98,8 @@ PRIMARY KEY (module_id, program_id),
 FOREIGN KEY (program_id) REFERENCES programme(id),
 FOREIGN KEY (module_id) REFERENCES module(id)
 );
+create table enrollment(
+    student_id varchar(10),
+    batch_num varchar(10),
+    reg_date date
+)
