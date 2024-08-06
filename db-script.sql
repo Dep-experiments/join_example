@@ -38,3 +38,14 @@ create table programme
     id   varchar(10) primary key,
     name varchar(50) not null
 );
+
+INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
+                                                              ("E002", "78", "M005"),
+                                                              ("E003", "45", "M005"),
+                                                              ("E004", "96", "M007"),
+                                                              ("E005", "12", "M002"),
+                                                              ("E006", "35", "M007"),
+                                                              ("E007", "81", "M008"),
+                                                              ("E008", "53", "M001"),
+                                                              ("E009", "73", M006),
+                                                              ("E010", "66", "M005");
