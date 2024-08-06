@@ -90,3 +90,11 @@ INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M0
                                                               ("E008", "53", "M001"),
                                                               ("E009", "73", M006),
                                                               ("E010", "66", "M005");
+
+CREATE TABLE programe_module(
+module_id VARCHAR(10) NOT NULL,
+program_id VARCHAR(10) NULL,
+PRIMARY KEY (module_id, program_id),
+FOREIGN KEY (program_id) REFERENCES programme(id),
+FOREIGN KEY (module_id) REFERENCES module(id)
+);
