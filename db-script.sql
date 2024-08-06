@@ -98,3 +98,18 @@ PRIMARY KEY (module_id, program_id),
 FOREIGN KEY (program_id) REFERENCES programme(id),
 FOREIGN KEY (module_id) REFERENCES module(id)
 );
+
+INSERT INTO programe_module (program_id, module_id) VALUES
+                                                           ('P001', 'M001'),
+                                                           ('P001', 'M002'),
+                                                           ('P001', 'M003'),
+                                                           ('P001', 'M004'),
+                                                           ('P002', 'M002'),
+                                                           ('P002', 'M005'),
+                                                           ('P002', 'M006'),
+                                                           ('P002', 'M007'),
+                                                           ('P003', 'M001'),
+                                                           ('P003', 'M003'),
+                                                           ('P003', 'M008'),
+                                                           ('P003', 'M009'),
+                                                           ('P003', 'M010');
