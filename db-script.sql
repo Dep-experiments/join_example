@@ -83,7 +83,7 @@ INSERT INTO module (id, name, credits) VALUES
 
 CREATE TABLE programe_module(
 module_id VARCHAR(10) NOT NULL,
-program_id VARCHAR(10) NULL,
+program_id VARCHAR(10) NOT NULL,
 PRIMARY KEY (module_id, program_id),
 FOREIGN KEY (program_id) REFERENCES programme(id),
 FOREIGN KEY (module_id) REFERENCES module(id)
