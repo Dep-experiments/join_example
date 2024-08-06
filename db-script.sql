@@ -17,11 +17,21 @@ VALUES ('S001', 'Amal'),
        ('S010', 'Sanduni');
 
 
-CREATE TABLE batch(
-  number VARCHAR(10) PRIMARY KEY ,
-  programme_id VARCHAR(10) NOT NULL ,
-  CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme(id)
+CREATE TABLE batch
+(
+    number       VARCHAR(10) PRIMARY KEY,
+    programme_id VARCHAR(10) NOT NULL,
+    CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme (id)
 );
+
+INSERT INTO batch (number, programme_id) VALUES (
+        ('100','P001'),
+        ('50','P002'),
+        ('120','P003'),
+        ('80','P004'),
+        ('100','P005'),
+        ('300','P006')
+       );
 
 CREATE TABLE module
 (
@@ -30,11 +40,12 @@ CREATE TABLE module
     credits INT         NOT NULL
 );
 
-CREATE TABLE exam(
-    exam_code VARCHAR(10) PRIMARY KEY ,
-    passing_score INT NOT NULL ,
-    module_id VARCHAR(10) NOT NULL ,
-    CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module(id)
+CREATE TABLE exam
+(
+    exam_code     VARCHAR(10) PRIMARY KEY,
+    passing_score INT         NOT NULL,
+    module_id     VARCHAR(10) NOT NULL,
+    CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module (id)
 );
 
 
@@ -45,13 +56,14 @@ create table programme
     name varchar(50) not null
 );
 
-INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
-                                                              ("E002", "78", "M005"),
-                                                              ("E003", "45", "M005"),
-                                                              ("E004", "96", "M007"),
-                                                              ("E005", "12", "M002"),
-                                                              ("E006", "35", "M007"),
-                                                              ("E007", "81", "M008"),
-                                                              ("E008", "53", "M001"),
-                                                              ("E009", "73", M006),
-                                                              ("E010", "66", "M005");
+INSERT INTO exam (exam_code, passing_score, module_id)
+VALUES ("E001", "75", "M001"),
+       ("E002", "78", "M005"),
+       ("E003", "45", "M005"),
+       ("E004", "96", "M007"),
+       ("E005", "12", "M002"),
+       ("E006", "35", "M007"),
+       ("E007", "81", "M008"),
+       ("E008", "53", "M001"),
+       ("E009", "73", M006),
+       ("E010", "66", "M005");
