@@ -17,6 +17,12 @@ VALUES ('S001', 'Amal'),
        ('S010', 'Sanduni');
 
 
+CREATE TABLE batch(
+  number VARCHAR(10) PRIMARY KEY ,
+  programme_id VARCHAR(10) NOT NULL ,
+  CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme(id)
+);
+
 CREATE TABLE module
 (
     id      VARCHAR(10) PRIMARY KEY,
