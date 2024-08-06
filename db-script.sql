@@ -54,6 +54,9 @@ CREATE TABLE exam
 );
 
 
+create table programme
+(
+    id   varchar(10) primary key,
 
 create table programme
 (
@@ -80,10 +83,24 @@ INSERT INTO module (id, name, credits) VALUES
 
 CREATE TABLE programe_module(
 module_id VARCHAR(10) NOT NULL,
-program_id VARCHAR(10) NULL,
+program_id VARCHAR(10) NOT NULL,
 PRIMARY KEY (module_id, program_id),
 FOREIGN KEY (program_id) REFERENCES programme(id),
 FOREIGN KEY (module_id) REFERENCES module(id)
+);
+create table enrollment(
+    student_id varchar(10),
+    batch_num varchar(10),
+    reg_date date
+);
+
+CREATE TABLE student_batch(
+                              student_id VARCHAR(10) NOT NULL,
+                              batch_num VARCHAR(10) NULL,
+                              reg_date date,
+                                PRIMARY KEY (student_id, batch_num),
+                                FOREIGN KEY (student_id) REFERENCES student(id),
+                                FOREIGN KEY (batch_num) REFERENCES batch(id)
 );
 INSERT INTO exam (exam_code, passing_score, module_id) VALUES ('E001', 75, 'M001'),
                                                               ('E002', 78, 'M005'),
