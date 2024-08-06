@@ -77,16 +77,6 @@ INSERT INTO module (id, name, credits) VALUES
                                            ('M009', 'Machine Learning', 4),
                                            ('M010', 'Human-Computer Interaction', 3);
 
-INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
-                                                              ("E002", "78", "M005"),
-                                                              ("E003", "45", "M005"),
-                                                              ("E004", "96", "M007"),
-                                                              ("E005", "12", "M002"),
-                                                              ("E006", "35", "M007"),
-                                                              ("E007", "81", "M008"),
-                                                              ("E008", "53", "M001"),
-                                                              ("E009", "73", M006),
-                                                              ("E010", "66", "M005");
 
 CREATE TABLE programe_module(
 module_id VARCHAR(10) NOT NULL,
@@ -116,3 +106,18 @@ CREATE TABLE student_exam(
     CONSTRAINT fk_batch_number FOREIGN KEY (batch_number) REFERENCES enrollment(batch_number),
     CONSTRAINT fk_exam_code FOREIGN KEY (exam_code) REFERENCES exam(exam_code)
 );
+
+INSERT INTO programe_module (program_id, module_id) VALUES
+                                                           ('P001', 'M001'),
+                                                           ('P001', 'M002'),
+                                                           ('P001', 'M003'),
+                                                           ('P001', 'M004'),
+                                                           ('P002', 'M002'),
+                                                           ('P002', 'M005'),
+                                                           ('P002', 'M006'),
+                                                           ('P002', 'M007'),
+                                                           ('P003', 'M001'),
+                                                           ('P003', 'M003'),
+                                                           ('P003', 'M008'),
+                                                           ('P003', 'M009'),
+                                                           ('P003', 'M010');
