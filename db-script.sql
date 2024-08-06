@@ -24,6 +24,7 @@ VALUES ('S001', 'Amal'),
 
 CREATE TABLE batch
 (
+    batch_id    VARCHAR(10),
     number       VARCHAR(10) PRIMARY KEY,
     programme_id VARCHAR(10) NOT NULL,
     CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme (id)
