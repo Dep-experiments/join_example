@@ -45,6 +45,18 @@ create table programme
     name varchar(50) not null
 );
 
+INSERT INTO module (id, name, credits) VALUES
+                                           ('M001', 'Introduction to Programming', 3),
+                                           ('M002', 'Data Structures and Algorithms', 4),
+                                           ('M003', 'Database Systems', 3),
+                                           ('M004', 'Operating Systems', 3),
+                                           ('M005', 'Software Engineering', 4),
+                                           ('M006', 'Computer Networks', 3),
+                                           ('M007', 'Web Development', 3),
+                                           ('M008', 'Artificial Intelligence', 4),
+                                           ('M009', 'Machine Learning', 4),
+                                           ('M010', 'Human-Computer Interaction', 3);
+
 INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M001"),
                                                               ("E002", "78", "M005"),
                                                               ("E003", "45", "M005"),
