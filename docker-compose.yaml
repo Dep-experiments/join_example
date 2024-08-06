@@ -4,7 +4,7 @@ services:
       MYSQL_ROOT_PASSWORD: mysql
     ports:
       - 15000:3306
-    container_name: mysql_project_container
+    container_name: mysql_project_join_example
     volumes:
       - ~/project:/var/lib/mysql
     image: mysql
