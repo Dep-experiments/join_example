@@ -17,11 +17,21 @@ VALUES ('S001', 'Amal'),
        ('S010', 'Sanduni');
 
 
-CREATE TABLE batch(
-  number VARCHAR(10) PRIMARY KEY ,
-  programme_id VARCHAR(10) NOT NULL ,
-  CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme(id)
+CREATE TABLE batch
+(
+    number       VARCHAR(10) PRIMARY KEY,
+    programme_id VARCHAR(10) NOT NULL,
+    CONSTRAINT fk_programme_id FOREIGN KEY (programme_id) REFERENCES programme (id)
 );
+
+INSERT INTO batch (number, programme_id) VALUES (
+        ('100','P001'),
+        ('50','P002'),
+        ('120','P003'),
+        ('80','P004'),
+        ('100','P005'),
+        ('300','P006')
+       );
 
 CREATE TABLE module
 (
@@ -30,11 +40,12 @@ CREATE TABLE module
     credits INT         NOT NULL
 );
 
-CREATE TABLE exam(
-    exam_code VARCHAR(10) PRIMARY KEY ,
-    passing_score INT NOT NULL ,
-    module_id VARCHAR(10) NOT NULL ,
-    CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module(id)
+CREATE TABLE exam
+(
+    exam_code     VARCHAR(10) PRIMARY KEY,
+    passing_score INT         NOT NULL,
+    module_id     VARCHAR(10) NOT NULL,
+    CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module (id)
 );
 
 
