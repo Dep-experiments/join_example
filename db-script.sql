@@ -49,3 +49,14 @@ INSERT INTO exam (exam_code, passing_score, module_id) VALUES ("E001", "75", "M0
                                                               ("E008", "53", "M001"),
                                                               ("E009", "73", M006),
                                                               ("E010", "66", "M005");
+
+CREATE TABLE student_exam(
+    student_id VARCHAR(10) NOT NULL ,
+    exam_code VARCHAR(10) NOT NULL ,
+    batch_number VARCHAR(10) NOT NULL ,
+    mark INT NOT NULL ,
+    CONSTRAINT pk_student_exam PRIMARY KEY (student_id, exam_code, batch_number),
+    CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES enrollment(student_id),
+    CONSTRAINT fk_batch_number FOREIGN KEY (batch_number) REFERENCES enrollment(batch_number),
+    CONSTRAINT fk_exam_code FOREIGN KEY (exam_code) REFERENCES exam(exam_code)
+);
